@@ -27,9 +27,9 @@ PROJECT_ROOT=$(readlink -f $THIS_DIR/../../../../../../..)
 
 # Get the location of the local compiler in this directory, if it exists.
 # If it doesn't, build it, then resume execution.
-LOCAL_COMPILER="$PROJECT_ROOT/target/closure-compiler-1.0-SNAPSHOT.jar"
+LOCAL_COMPILER="$PROJECT_ROOT/bazel-bin/compiler_uberjar_deploy.jar"
 if [ ! -f "$LOCAL_COMPILER" ]; then
-  echo -e "\nCompiler JAR not built. Building...\n" && yarn build:fast
+  echo -e "\nCompiler JAR not built. Building...\n" && bazelisk build //:compiler_uberjar_deploy.jar
 fi
 
 # Build tests from the $TEST_DIR directory, where files like

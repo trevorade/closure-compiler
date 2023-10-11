@@ -284,6 +284,15 @@ yarn compile [...args]
     [bug](https://stackoverflow.com/questions/4711098/passing-end-of-transmission-ctrl-d-character-in-eclipse-cdt-console)
     regarding passing "End of Transmission" in the Eclipse console.
 
+### Testing runtime_tests
+
+To run the JavaScript runtime tests: 
+
+```sh
+test/com/google/javascript/jscomp/runtime_tests/utils/build.sh
+npx jasmine test/com/google/javascript/jscomp/runtime_tests/utils/test/runAll.js
+```
+
 ## Contributing
 
 ### Contributor code of conduct
